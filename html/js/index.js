@@ -5,7 +5,7 @@ $(function(){
   var topBtn = $('.page-top');
   topBtn.hide();
   $(window).scroll(function () {
-    if ($(this).scrollTop() > 300) {
+    if ($(this).scrollTop() > 200) {
       topBtn.fadeIn();
     } else {
       topBtn.fadeOut();

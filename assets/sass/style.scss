@@ -23,6 +23,7 @@ p{
 li{
 	list-style-type: none;
 }
+
 //#wrapperの幅
 #wrapper{
   width: 100%
@@ -45,11 +46,11 @@ li{
 * ハンバーガーアイコン
 */
 .navbar {
-	background-color: #ddd;
+	background-color: #cc0000;
 	.navbar-toggle {
-		background-color: #ccc;
+		background-color: #ff0000;
 		.icon-bar {
-			background-color: #fff;
+			background-color: #f9f9f9;
 		}
 	}
 }
@@ -58,7 +59,7 @@ li{
 /*
 * ヒーローイメージ
 */
-.hero{ 
+.hero{
 	width: 100%;
 	margin: 1rem auto 0 auto;
 }
@@ -99,10 +100,9 @@ li{
 	background-color: #f9f9f9;
 	color: #cc0000;
 }
-
-#flex {
+.nav-menu {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 
 //profile
@@ -136,7 +136,7 @@ li{
 			margin: 40px 0;
 			padding-bottom: 40px;
 			line-height: 3;
-			border-bottom: 1px dotted #999;
+			border-bottom: 1px dotted #cc0000;
 		}
 		&_lists {
 			margin-bottom: 40px;
@@ -158,16 +158,42 @@ li{
 	}
 }
 
+//上に戻るボタン
+.page-top {
+  position: fixed;
+  bottom: 20px;
+  right: 25px;
+  overflow: hidden;
+  z-index: 20;
+	border: 2px solid #cc0000;
+	border-radius: .5rem;
+	background-color: #f9f9f9;
+	width: 5rem;
+	height: 5rem;
+	text-align:center;
+	padding-top: 1rem;
+  @media screen and (max-width: 768px) {
+    bottom: 50px;
+  }
+  @media (max-width: 768px) and (orientation: landscape) {
+    bottom: 100px;
+  }
+}
+.fa-arrow-up{
+	color: #cc0000;
+}
+
 /*
 * フッター
 */
 .gl-footer {
 	width: 100%;
 	height: 100px;
-	padding-top: 60px;
-	background-color: #ddd;
+	padding-top: 4rem;
+	background-color: #cc0000;
 	&_container {
 		text-align: center;
+		color: #f9f9f9;
 	}
 }
 
