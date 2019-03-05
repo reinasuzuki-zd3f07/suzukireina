@@ -112,10 +112,27 @@ li{
 }
 .faceImage{
 	width: 50rem;
-	height: 50rem;
-	background: url("../images/profile.png") 0 0 no-repeat;
+	@media screen and (max-width: 768px) {
+		width: 100%;
+		display: flex;
+    flex-direction: columns;
+  }
+  //↑ここは再度検討が必要。うまくレスポンシブにならない。
+// 	height: 50rem;
+// 	background: url("../images/profile.png") 0 0 no-repeat;
 }
-
+//スキルの画像
+th{
+	width: 10rem;
+}
+td {
+	align: center;
+}
+table img{
+	padding-top:1.5rem;
+	padding-right: 2rem;
+	width:5rem;
+	}
 /*
 * 共通コンテンツ
 */
