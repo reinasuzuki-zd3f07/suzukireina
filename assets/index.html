@@ -21,6 +21,8 @@
 
     <!-- ファビコン -->
     <link rel="icon" href="images/fa.png" type="image/png">
+    <!-- ホーム画面に追加 -->    
+    <link rel="apple-touch-icon" href="images/fa.png">
     <!-- Bootstrap3.3.7 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- FontAwesome -->
@@ -42,30 +44,32 @@
 </head>
 
 <body class="top">
-  <header class="gl-header">
-    <section class="hero">
-    <div class="herpTop">
-    <img src="images/rei01.png" alt="rei">
-    <img src="images/rei02.png" alt="rei">
-    <img src="images/rei03.png" alt="rei">
-    <img src="images/rei04.png" alt="rei">
-    <img src="images/rei05.png" alt="rei">
-    <img src="images/rei06.png" alt="rei">
-    <img src="images/rei07.png" alt="rei">
-    </div>
-    <h2>鈴木麗那</h2>
+  <section class="hero">
+    <ul class="heroTop">
+    <li><img src="images/rei01.png" alt="rei"></li>
+    <li><img src="images/rei02.png" alt="rei"></li>
+    <li><img src="images/rei03.png" alt="rei"></li>
+    <li><img src="images/rei04.png" alt="rei"></li>
+    <li><img src="images/rei05.png" alt="rei"></li>
+    <li><img src="images/rei06.png" alt="rei"></li>
+    <li><img src="images/rei07.png" alt="rei"></li>
+    </ul>
+    <div class="heroTitle">
+    <h2 id='name'>鈴木麗那</h2>
     <p>ポートフォリオサイト</p>
-    <div class="heroBottom">
-    <img src="images/rei08.png" alt="rei">
-    <img src="images/rei09.png" alt="rei">
-    <img src="images/rei10.png" alt="rei">
-    <img src="images/rei11.png" alt="rei">
-    <img src="images/rei12.png" alt="rei">
-    <img src="images/rei13.png" alt="rei">
-    <img src="images/rei14.png" alt="rei">
     </div>
+    <ul class="heroBottom">
+    <li><img src="images/rei08.png" alt="rei"></li>
+    <li><img src="images/rei09.png" alt="rei"></li>
+    <li><img src="images/rei10.png" alt="rei"></li>
+    <li><img src="images/rei11.png" alt="rei"></li>
+    <li><img src="images/rei12.png" alt="rei"></li>
+    <li><img src="images/rei13.png" alt="rei"></li>
+    <li><img src="images/rei14.png" alt="rei"></li>
+    </ul>
   </section>
-    <nav class="navbar navbar-fixed-top">
+  <header class="gl-header">
+    <nav class="navbar navbar-expand-md">
       <!-- 1000px以下 -->
       <div class="container">
           <div class="navbar-header">
@@ -74,7 +78,9 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><h1 class="gl-header_title">Reina Suzuki</h1></a>
+            <!-- <a class="navbar-brand" href="#"> -->
+              <h1 class="gl-header_title">Reina Suzuki</h1>
+            <!-- </a> -->
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -120,7 +126,7 @@
 
   <footer class="gl-footer">
     <div class="container gl-footer_container">
-      <small>&copy;20XX XXXX Co., Ltd. All Rights Reserved.</small>
+      <small>&copy;2019 REINA SUZUKI. All Rights Reserved.</small>
     </div>
   </footer>
 

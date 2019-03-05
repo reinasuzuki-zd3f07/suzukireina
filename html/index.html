@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>(PageTitle | )SiteTitle</title>
-    <meta name="keywords" content="キーワード,半角のカンマ区切りで6~7語(SEOの効果なし)">
-    <meta name="description" content="検索結果に表示する200語程度のページ説明文(SEOの効果なし)">
+    <title>HOME | REINA SUZUKI</title>
+    <meta name="keywords" content="web,design,coder,html,css,webdesign,">
+    <meta name="description" content="鈴木麗那のポートフォリオです。あなたのWebサイトづくりをお手伝いします。">
     <!-- スマホの表示倍率を100%にリセット -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <!-- iPhoneXでのボックス表示対応(Bootstrapのハンバーガーアイコンが無効になる) -->
     <!-- <meta name="viewport" content="viewport-fit=cover"> -->
     <!-- OGP (Facebookでのフィード表示) -->
@@ -20,7 +20,9 @@
     <meta property="og:description" content="ページ説明文" />
 
     <!-- ファビコン -->
-    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="icon" href="images/fa.png" type="image/png">
+    <!-- ホーム画面に追加 -->    
+    <link rel="apple-touch-icon" href="images/fa.png">
     <!-- Bootstrap3.3.7 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- FontAwesome -->
@@ -42,8 +44,32 @@
 </head>
 
 <body class="top">
+  <section class="hero">
+    <ul class="heroTop">
+    <li><img src="images/rei01.png" alt="rei"></li>
+    <li><img src="images/rei02.png" alt="rei"></li>
+    <li><img src="images/rei03.png" alt="rei"></li>
+    <li><img src="images/rei04.png" alt="rei"></li>
+    <li><img src="images/rei05.png" alt="rei"></li>
+    <li><img src="images/rei06.png" alt="rei"></li>
+    <li><img src="images/rei07.png" alt="rei"></li>
+    </ul>
+    <div class="heroTitle">
+    <h2 id='name'>鈴木麗那</h2>
+    <p>ポートフォリオサイト</p>
+    </div>
+    <ul class="heroBottom">
+    <li><img src="images/rei08.png" alt="rei"></li>
+    <li><img src="images/rei09.png" alt="rei"></li>
+    <li><img src="images/rei10.png" alt="rei"></li>
+    <li><img src="images/rei11.png" alt="rei"></li>
+    <li><img src="images/rei12.png" alt="rei"></li>
+    <li><img src="images/rei13.png" alt="rei"></li>
+    <li><img src="images/rei14.png" alt="rei"></li>
+    </ul>
+  </section>
   <header class="gl-header">
-    <nav class="navbar navbar-fixed-top">
+    <nav class="navbar navbar-expand-md">
       <!-- 1000px以下 -->
       <div class="container">
           <div class="navbar-header">
@@ -52,38 +78,21 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><h1 class="gl-header_title">SiteTitle</h1></a>
+            <!-- <a class="navbar-brand" href="#"> -->
+              <h1 class="gl-header_title">Reina Suzuki</h1>
+            <!-- </a> -->
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Top</a></li>
-              <li><a href="#">Menu01</a></li>
-              <li><a href="#">Menu02</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Menu03 <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Menu03-1</a></li>
-                  <li><a href="#">Menu03-2</a></li>
-                  <li><a href="#">Menu03-3</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li class="dropdown-header">Menu03-4</li>
-                  <li><a href="#">Menu03-4-1</a></li>
-                  <li><a href="#">Menu03-4-2</a></li>
-                </ul>
-              </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="./">Utility01</a></li>
-              <li><a href="#">Utility02</a></li>
-              <li><a href="#">Utility03</a></li>
-            </ul>
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#">Skills</a></li>
+              <li><a href="#">Sites</a></li>
+              <li><a href="#">Banner</a></li>
+              <li><a href="#">Contact</a></li>
           </div>
       </div>
     </nav>
   </header>
-
-  <section class="hero"></section>
-
   <main>
     <div class="container">
       <section class="block">
@@ -117,7 +126,7 @@
 
   <footer class="gl-footer">
     <div class="container gl-footer_container">
-      <small>&copy;20XX XXXX Co., Ltd. All Rights Reserved.</small>
+      <small>&copy;2019 REINA SUZUKI. All Rights Reserved.</small>
     </div>
   </footer>
 

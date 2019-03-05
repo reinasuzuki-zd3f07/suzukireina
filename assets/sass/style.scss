@@ -1,54 +1,102 @@
-@charset "utf-8";
-@import "reset";
-@import "module";
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&subset=japanese');
+@import "bootstrap";
+@import url("responsive.css") screen and (max-width: 768px);
 
-/*
-* ヘッダー
-*/
-.gl-header {
-  background-color: #ddd;
-  height: 50px;
-  .navbar-brand {
-  	padding-top: 0;
-  	margin-right: 20px;
-  }
-  /*
-	* ロゴ（画像置換）
-	*/
-  &_title {
-  	width: 200px;
-  	height: 50px;
-  	background: url("../images/logo.png") 0 0 no-repeat;
-		text-indent: -9999px;
-		&:hover {
-			opacity: 0.5;
-		}
-  }
-  /*
-	* ハンバーガーアイコン
-	*/
-  .navbar {
-  	background-color: #ddd;
-  	.navbar-toggle {
-  		background-color: #ccc;
-  		.icon-bar {
-  			background-color: #fff;
-  		}
-  	}
-  }
+// 全体の設定 ここから
+*{
+    margin: 0;
+    box-sizing: border-box;
 }
+html{
+    font-size: 62.5%;//10px
+}
+body{
+    font-size: 1.6rem;//16px
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+p{
+    font-size: 1.6rem;//16px
+}
+li{
+	list-style-type: none;
+}
+//#wrapperの幅
+#wrapper{
+  width: 100%
+}
+
+//FontAwsomeの隙間
+.fas{
+  padding-right: 0.8rem;
+}
+.far{
+  padding-right: 0.8rem;
+}
+
+h1{//h1の文字隠し
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  }
+/*
+* ハンバーガーアイコン
+*/
+.navbar {
+	background-color: #ddd;
+	.navbar-toggle {
+		background-color: #ccc;
+		.icon-bar {
+			background-color: #fff;
+		}
+	}
+}
+
 
 /*
 * ヒーローイメージ
 */
-.hero {
+.hero{ 
 	width: 100%;
-	height: 500px;
-	background: url("../images/main.jpg") center center no-repeat;
-	background-size: cover;
-	@media screen and (max-width: 768px) {
-		height: 300px;
-	}
+	margin: 1rem auto 0 auto;
+}
+.heroTop  {
+	display: flex;
+	justify-content: space-between;
+}
+.heroBottom{
+	display: flex;
+	justify-content: space-between;
+}
+.hero img{
+	width: 5rem;
+}
+
+.heroTitle{
+	margin: 2rem 1rem;
+	font-size: 3.2rem;
+	text-align: center;
+	letter-spacing: 1.7rem;
+}
+#name {
+	font-size: 6rem;
+	font-weight: 700;
+	letter-spacing: 2.5rem;
+}
+
+.navbar {
+	background-color: #cc0000;
+}
+
+#navbar a{
+	color: #333;
+}
+
+#navbar a:hover; {
+	background-color: #f9f9f9;
+	color: #cc0000;
 }
 
 /*
