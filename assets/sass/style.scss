@@ -25,9 +25,10 @@ li{
 }
 
 //#wrapperの幅
-#wrapper{
-  width: 100%
-}
+// #wrapper{
+//   width: 100%;
+//   margin: 0 auto;
+// }
 
 //FontAwsomeの隙間
 .fas{
@@ -48,9 +49,9 @@ li{
 .navbar {
 	background-color: #cc0000;
 	.navbar-toggle {
-		background-color: #ff0000;
+		background-color: #f9f9f9;
 		.icon-bar {
-			background-color: #f9f9f9;
+			background-color: #cc0000;
 		}
 	}
 }
@@ -61,16 +62,18 @@ li{
 */
 .hero{
 	width: 100%;
-	margin: 1rem auto 0 auto;
+	margin: 2rem 0 0 auto;
 }
-.heroTop  {
+.heroTop,
+.heroBottom  {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
+	padding-left: 0;
 }
-.heroBottom{
-	display: flex;
-	justify-content: space-between;
-}
+// .heroBottom{
+// 	display: flex;
+// 	justify-content: space-around;
+// }
 .hero img{
 	width: 5rem;
 }
@@ -109,13 +112,16 @@ li{
 .block_body_p {
 	display: flex;
 	justify-content: space-between;
+	@media screen and (max-width: 768px) {
+		display:block;
+	}
 }
 .faceImage{
-	width: 50rem;
+	max-width: 50rem;
 	@media screen and (max-width: 768px) {
-		width: 100%;
-		display: flex;
-    flex-direction: columns;
+    display: block;
+    width: 100%;
+    // flex-direction: columns;
   }
   //↑ここは再度検討が必要。うまくレスポンシブにならない。
 // 	height: 50rem;
@@ -124,10 +130,11 @@ li{
 //スキルの画像
 th{
 	width: 10rem;
+	vertical-align: top;
 }
-td {
-	align: center;
-}
+// td {
+// 	align: center;
+// }
 table img{
 	padding-top:1.5rem;
 	padding-right: 2rem;
@@ -142,7 +149,7 @@ table img{
 		&_title {
 			padding-left: 10px;
 			margin: 40px 0;
-			border-left: 5px solid #bbb;
+			border-left: 5px solid #cc0000;
 			font-size: 2rem;
 		}
 		&_subtitle {
