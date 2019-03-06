@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>HOME | REINA SUZUKI</title>
+    <title>Contact | REINA SUZUKI</title>
     <meta name="keywords" content="web,design,coder,html,css,webdesign,">
     <meta name="description" content="鈴木麗那のポートフォリオです。あなたのWebサイトづくりをお手伝いします。">
     <!-- スマホの表示倍率を100%にリセット -->
@@ -85,11 +85,11 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse nav-menu">
             <ul class="nav navbar-nav" id="flex">
-              <li class="active"><a href="#">Home</a></li>
+              <li class="active"><a href="index.html">Home</a></li>
               <li><a href="#">Skills</a></li>
               <li><a href="#">Sites</a></li>
-              <li><a href="banner.html">Banner</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#">Banner</a></li>
+              <li><a href="#">Contact</a></li>
             </ul>
           </div>
       </div>
@@ -99,50 +99,73 @@
     <div class="container">
       <section class="block">
           <div class="block_body">
-            <h2 class="block_body_title">プロフィール</h2>
-            <div class="block_body_p profile">
-              <!-- <div class="faceImage">写真</div>-->
-              <img class="faceImage" src="images/profile.png" alt="デスクワークする女性">
-              <table>
-                <tr>
-                  <th>Name:</th>
-                  <td>鈴木　麗那　(REINA SUZUKI)</td>
-                </tr>
-                <tr>
-                  <th>Age:</th>
-                  <td>今の年号と一緒<br>(19年5月からは変わります)</td>
-                </tr>
-                <tr>
-                  <th>Location:</th>
-                  <td>神奈川県川崎市</td>
-                </tr>
-                <tr>
-                  <th>Skill:</th>
-                  <td>HTML, CSS, PHP, MySQL, Photoshop, Illustrotar, XD<br>
-                  Git/Git Hub, Sorcetree, FileZilla, Eclipse, XAMMP, Gulp</td>
-                </tr>
-                <tr>
-                  <th colspan="2">
-                      <img class="skills" src="images/skill_png/html5.png" alt="html5">
-                      <img class="skills" src="images/skill_png/css3.png" alt="css3">
-                      <img class="skills" src="images/skill_png/sass.png" alt="sass">
-                      <img class="skills" src="images/skill_png/bootstrap.png" alt="bootstrap">
-                      <img class="skills" src="images/skill_png/php.png" alt="php">
-                      <img class="skills" src="images/skill_png/mysql.png" alt="mysql">
-                      <img class="skills" src="images/skill_png/wordpress.png" alt="wordpress">
-                      <img class="skills" src="images/skill_png/git.png" alt="git">
-                      <img class="skills" src="images/skill_png/sourcetree.png" alt="sourcetree">
-                      <img class="skills" src="images/skill_png/ai.png" alt="illustrator">
-                      <img class="skills" src="images/skill_png/ps.png" alt="photoshop">
-                      <img class="skills" src="images/skill_png/xd.png" alt="xd">
-                      <img class="skills" src="images/skill_png/xampp.png" alt="xampp">
-                      <img class="skills" src="images/skill_png/eclipse.png" alt="eclipse">
-                      <img class="skills" src="images/skill_png/google-analytics.png" alt="google-analytics">
-                      <img class="skills" src="images/skill_png/FileZilla.png" alt="FileZilla">
-                  </th>
-                </tr>
-              </table>
-            </div>
+            <h2 class="block_body_title">お問い合わせ</h2>
+            <div class="col-md-8">
+            <h3 class="page-header">Send Message</h3>
+            <form class="form-horizontal" action="" method="post" novalidate>
+            <!-- 隠しフォームで次のページに値を送る -->
+          <input type="hidden" name="token" value="<?php echo getToken(); ?>">
+              <div class="form-group">
+                <label for="inputname" class="col-sm-3 control-label">お名前<span>(必須)</span></label>
+                <div class="col-sm-9">
+                <div class="text-warning">
+                    <?php if(isset($errorName)): ?>
+                    <?php echo h($errorName); ?>
+                    <?php endif; ?>
+                </div>
+                  <input type="text" class="form-control" name="name" id="inputname" value="<?php echo h($name); ?>" required>
+                  <p class="help-block">(例)山田　太郎</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputkana" class="col-sm-3 control-label">フリガナ<span>(必須)</span></label>
+                <div class="col-sm-9">
+                <div class="text-warning">
+                    <?php if(isset($errorKana)): ?>
+                    <?php echo h($errorKana); ?>
+                    <?php endif; ?>
+                </div>
+                  <input type="text" class="form-control" name="kana" id="inputkana" value="<?php echo h($kana); ?>" required>
+                  <p class="help-block">(例)ヤマダ　タロウ ※全角カタカナ</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputemail" class="col-sm-3 control-label">メールアドレス<span>(必須)</span></label>
+                <div class="col-sm-9">
+                  <div class="text-warning">
+                      <?php if(isset($errorEmail)): ?>
+                        <?php echo h($errorEmail); ?>
+                        <?php endif; ?>
+                    </div>
+                  <input type="email" class="form-control" name="email" id="inputemail" required value="<?php echo h($email); ?>">
+                  <p class="help-block">(例)abc@zz.com ※半角英数字</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputtel" class="col-sm-3 control-label">電話番号</label>
+                <div class="col-sm-9">
+                  <input type="tel" class="form-control" name="phone" id="inputtel" value="<?php echo h($phone); ?>">
+                  <p class="help-block">(例)03-1234-3214　※ハイフンあり　半角数字</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputmessage" class="col-sm-3 control-label">お問い合わせ内容<span>(必須)</span></label>
+                <div class="col-sm-9">
+                <div class="text-warning">
+                  <?php if(isset($errorInquiry)): ?>
+                    <?php echo h($errorInquiry); ?>
+                    <?php endif; ?>
+                </div>
+                  <textarea rows="10" cols="100" class="form-control" name="inquiry" id="message" required maxlength="999" style="resize:none"><?php echo h($inquiry); ?></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-10">
+                  <button type="submit" class="btn btn-success btn-lg" name="check">内容を確認して送信</button>
+                </div>
+              </div>
+            </form>
+          </div>
           </div>
       </section>
     </div>

@@ -2,8 +2,9 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&subset=japanese');
 @import "bootstrap";
 @import url("responsive.css") screen and (max-width: 768px);
-
-// 全体の設定 ここから
+/*
+* 全体設定ここから
+*/
 *{
     margin: 0;
     box-sizing: border-box;
@@ -24,6 +25,7 @@ li{
 	list-style-type: none;
 }
 
+//↓今のところ不要
 //#wrapperの幅
 // #wrapper{
 //   width: 100%;
@@ -55,10 +57,12 @@ li{
 		}
 	}
 }
-
+/*
+* 全体設定ここまで
+*/
 
 /*
-* ヒーローイメージ
+* ヒーローイメージ(麗の文字)ここから
 */
 .hero{
 	width: 100%;
@@ -70,78 +74,112 @@ li{
 	justify-content: space-around;
 	padding-left: 0;
 }
-// .heroBottom{
-// 	display: flex;
-// 	justify-content: space-around;
-// }
-.hero img{
+
+.hero img{ //麗の漢字の画像サイズ
 	width: 5rem;
 }
 
-.heroTitle{
+.heroTitle{ //名前のフォント、字間など
 	margin: 2rem 1rem;
 	font-size: 3.2rem;
 	text-align: center;
 	letter-spacing: 1.7rem;
 }
-#name {
+
+#name {//名前フォントなど
 	font-size: 6rem;
 	font-weight: 700;
 	letter-spacing: 2.5rem;
 	color: #333;
 }
-
-//ナビゲーションバー
-.navbar {
+/*
+* ヒーローイメージ(麗の文字)ここまで
+*/
+/*
+//ナビゲーションバーここから
+*/
+.navbar { //ナビゲーションの背景色
 	background-color: #cc0000;
 }
-#navbar a{
+#navbar a{//ナビゲーションリンクの文字色
 	color: #f9f9f9;
 }
 
-#navbar a:hover{
+#navbar a:hover{//ナビゲーションホバー時の色
 	background-color: #f9f9f9;
 	color: #cc0000;
 }
-.nav-menu {
+.nav-menu {//ナビの位置
 	display: flex;
 	justify-content: space-between;
 }
+/*
+//ナビゲーションバーここまで
+*/
 
-//profile
-.block_body_p {
+//ここからindex.html向けのCSS
+/*
+//プロフィールここから
+*/
+// .block_body_p {これは削除。下でクラス名を追加したからもう大丈夫(たぶん)
+// 	display: flex;
+// 	justify-content: space-between;
+// 	@media screen and (max-width: 768px) {
+// 		display:block;
+// 	}
+// }
+
+.profile {
 	display: flex;
 	justify-content: space-between;
 	@media screen and (max-width: 768px) {
 		display:block;
 	}
+	&_th{
+	width: 10rem;
+	vertical-align: top;
+	}
 }
-.faceImage{
+.faceImage{//シルエットの画像
 	max-width: 50rem;
 	@media screen and (max-width: 768px) {
     display: block;
     width: 100%;
-    // flex-direction: columns;
-  }
-  //↑ここは再度検討が必要。うまくレスポンシブにならない。
-// 	height: 50rem;
-// 	background: url("../images/profile.png") 0 0 no-repeat;
+	}
 }
-//スキルの画像
-th{
-	width: 10rem;
-	vertical-align: top;
-}
-// td {
-// 	align: center;
-// }
-table img{
+.skills {//スキルの画像
 	padding-top:1.5rem;
 	padding-right: 2rem;
 	width:5rem;
 	}
 /*
-* 共通コンテンツ
+//プロフィールここまで
+*/
+//ここまでindex.html向けのCSS
+
+//ここからbanner.html向けのCSS
+.banner {//配置
+	display: flex;
+	justify-content: space-between;
+	@media screen and (max-width: 768px) {
+		display:block;
+		width: 100%;
+	}
+}
+.fa-square{
+	color:#cc0000;
+}
+
+//ここまでbanner.html向けのCSS
+
+//ここからcontact.html向けのCSS
+
+
+
+//ここまでcontact.html向けのCSS
+
+/*
+* 共通コンテンツここから
 */
 .block {
 	margin: 80px 0;
@@ -181,8 +219,12 @@ table img{
 		}
 	}
 }
+/*
+* 共通コンテンツここまで
+*/
 
-//上に戻るボタン
+
+//上に戻るボタンここから
 .page-top {
   position: fixed;
   bottom: 20px;
@@ -206,6 +248,7 @@ table img{
 .fa-arrow-up{
 	color: #cc0000;
 }
+//上に戻るボタンここまで
 
 /*
 * フッター
