@@ -186,8 +186,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
               <li class="active"><a href="index.html">Home</a></li>
               <li><a href="skill.html">Skills</a></li>
               <li><a href="site.html">Sites</a></li>
-              <li><a href="ba">Banner</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="banner.html">Banner</a></li>
+              <li><a href="contact.php">Contact</a></li>
             </ul>
           </div>
       </div>
