@@ -147,7 +147,7 @@ a:hover{
 	width: 10rem;
 	vertical-align: top;
 	}
-	
+
 .faceImage{//シルエットの画像
 	max-width: 50rem;
 	@media screen and (max-width: 768px) {
@@ -300,6 +300,30 @@ a:hover{
 		text-align: center;
 		color: #f9f9f9;
 	}
+}
+//site01用のCSS
+.card-deck{
+	display:flex;
+	justify-content: space-around;
+	margin-bottom: 2rem;
+	@media screen and (max-width: 768px) {
+		display:block;
+		width: 100%;
+	}
+}
+// .card{
+// 	height: 10rem;
+// }
+.card-title{
+	color:#cc0000;
+	font-weight: 700;
+	font-size: 1.8rem;
+}
+.card-deck img {
+	width: 40%;
+	display: block;
+	margin: 1rem auto;
+	// height: 30%;
 }
 
 @import "second";
