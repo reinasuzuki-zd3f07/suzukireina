@@ -141,11 +141,12 @@ a:hover{
 	@media screen and (max-width: 768px) {
 		display:block;
 	}
-	&_th{
+}
+
+.profile th{
 	width: 10rem;
 	vertical-align: top;
 	}
-}
 .faceImage{//シルエットの画像
 	max-width: 50rem;
 	@media screen and (max-width: 768px) {
@@ -195,16 +196,21 @@ a:hover{
 //ここまでsite.html向けのCSS
 .site {
 	display: flex;
-	justify-content: space-between;
+	// justify-content: space-between;
 	@media screen and (max-width: 768px) {
 		display:block;
 	}
-	&_th{
-	width: 10rem;
-	vertical-align: top;
-	}
 }
-
+.details{
+	width: 100%;
+	margin-left: 5rem;
+	table-layout: fixed;
+}
+.details th{
+		width:10rem;
+		overflow-wrap: break-word;
+		vertical-align: top;
+	}
 
 //ここまでsite.html向けのCSS
 
