@@ -311,9 +311,9 @@ a:hover{
 		width: 100%;
 	}
 }
-// .card{
-// 	height: 10rem;
-// }
+.card{
+	height: 25rem;
+}
 .card-title{
 	color:#cc0000;
 	font-weight: 700;
@@ -323,7 +323,9 @@ a:hover{
 	width: 40%;
 	display: block;
 	margin: 1rem auto;
-	// height: 30%;
+}
+.card-text{
+	margin-top: 1.5rem;
 }
 
 @import "second";
