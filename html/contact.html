@@ -100,13 +100,13 @@
       <section class="block">
           <div class="block_body">
             <h2 class="block_body_title">お問い合わせ</h2>
-            <div class="col-md-8">
-            <h3 class="page-header">Send Message</h3>
+            <div class="col-md-12">
+           <!--  <h3 class="page-header">Send Message</h3> -->
             <form class="form-horizontal" action="" method="post" novalidate>
             <!-- 隠しフォームで次のページに値を送る -->
           <input type="hidden" name="token" value="<?php echo getToken(); ?>">
               <div class="form-group">
-                <label for="inputname" class="col-sm-3 control-label">お名前<span>(必須)</span></label>
+                <label for="inputname" class="col-sm-3 control-label">お名前<br><span>(必須)</span></label>
                 <div class="col-sm-9">
                 <div class="text-warning">
                     <?php if(isset($errorName)): ?>
@@ -118,7 +118,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputkana" class="col-sm-3 control-label">フリガナ<span>(必須)</span></label>
+                <label for="inputkana" class="col-sm-3 control-label">フリガナ<br><span>(必須)</span></label>
                 <div class="col-sm-9">
                 <div class="text-warning">
                     <?php if(isset($errorKana)): ?>
@@ -130,7 +130,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputemail" class="col-sm-3 control-label">メールアドレス<span>(必須)</span></label>
+                <label for="inputemail" class="col-sm-3 control-label">メールアドレス<br><span>(必須)</span></label>
                 <div class="col-sm-9">
                   <div class="text-warning">
                       <?php if(isset($errorEmail)): ?>
@@ -149,7 +149,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputmessage" class="col-sm-3 control-label">お問い合わせ内容<span>(必須)</span></label>
+                <label for="inputmessage" class="col-sm-3 control-label">お問い合わせ内容<br><span>(必須)</span></label>
                 <div class="col-sm-9">
                 <div class="text-warning">
                   <?php if(isset($errorInquiry)): ?>
@@ -161,7 +161,8 @@
               </div>
               <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-10">
-                  <button type="submit" class="btn btn-success btn-lg" name="check">内容を確認して送信</button>
+                  <button type="submit" class="btn btn-success 
+                  " name="check">内容を確認して送信</button>
                 </div>
               </div>
             </form>

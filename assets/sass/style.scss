@@ -24,7 +24,13 @@ p{
 li{
 	list-style-type: none;
 }
-
+a{
+	color:#cc0000;
+}
+a:hover{
+		color:#cc0000;
+		border-bottom: #cc0000;
+}
 //↓今のところ不要
 //#wrapperの幅
 // #wrapper{
@@ -173,10 +179,35 @@ li{
 //ここまでbanner.html向けのCSS
 
 //ここからcontact.html向けのCSS
-
-
-
+.btn-success {
+	background-color: #cc0000;
+	border-color:#cc0000;
+}
+.btn-success:hover{
+		background-color: #990000;
+		border-color:#cc0000;
+	}
+.caution{
+	border-color:#cc0000;
+}
 //ここまでcontact.html向けのCSS
+
+//ここまでsite.html向けのCSS
+.site {
+	display: flex;
+	justify-content: space-between;
+	@media screen and (max-width: 768px) {
+		display:block;
+	}
+	&_th{
+	width: 10rem;
+	vertical-align: top;
+	}
+}
+
+
+//ここまでsite.html向けのCSS
+
 
 /*
 * 共通コンテンツここから

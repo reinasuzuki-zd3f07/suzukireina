@@ -1,6 +1,91 @@
+<?php
+session_start();
+require_once 'util.inc.php';
+require_once 'libs/qd/qdsmtp.php';
+require_once 'libs/qd/qdmail.php';
+
+//セッション変数が存在する場合は読み出す
+if(isset($_SESSION["contact"])) {
+    $contact = $_SESSION["contact"];
+
+    $name = $contact["name"];
+    $kana = $contact["kana"];
+    $email = $contact["email"];
+    $phone = $contact["phone"];
+    $inquiry = $contact["inquiry"];
+    $token = $contact["token"];
+
+    if($token !== getToken()){
+        header("Location:contact.php");
+        exit;
+    }
+}
+else{
+    header("Location:contact.php");
+    exit;
+}
+
+if (isset($_POST["send"])){
+//ヒアドキュメントを使用する（php中級のロジックとビュー最後のページを参照）
+$body = <<<EOT
+■氏名
+{$name}
+
+■フリガナ
+{$kana}
+
+■メールアドレス
+{$email}
+
+■電話番号
+{$phone}
+
+■問い合わせ内容
+{$inquiry}
+
+EOT;
+
+    $mail = new Qdmail();
+    // エラーを非表示
+    $mail->errorDisplay(false);
+    $mail->smtpObject()->error_display = false;
+    // 送信内容
+    $mail->from("zd3F07@sim.zdrv.com", "Crescent Shoes Web");
+    $mail->to("zd3F07@sim.zdrv.com","Crescent Shoes 管理者");
+    $mail->subject("Crescent Shoes 問い合わせ");
+    $mail->text($body);
+    // SMTP用設定(xamppのためメールサーバ設定が必要)
+    $param = array(
+        "host" => "w1.sim.zdrv.com",
+        "port" => 25,
+        "from" => "zd3F07@sim.zdrv.com",
+        "protocol" => "SMTP"
+    );
+    $mail->smtp(TRUE);
+    $mail->smtpServer($param);
+    // 送信
+    $flag = $mail->send();
+
+    //もし送信に成功したならば
+    if($flag == TRUE){
+        unset($_SESSION["contact"]);//セッション変数を破棄(送信した後はいらないので消す)
+        header("Location:contact_done.php");
+        exit;
+    }
+    else{//送信失敗した場合は、セッション変数はそのまま残っているはず
+        header("Location:contact_error.php");
+        exit;
+    }
+}
+
+if (isset($_POST["back"])){
+    header("Location: contact.php");
+    exit;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
     <meta charset="UTF-8">
     <title>Contact | REINA SUZUKI</title>
@@ -99,77 +184,40 @@
     <div class="container">
       <section class="block">
           <div class="block_body">
-            <h2 class="block_body_title">お問い合わせ</h2>
-            <div class="col-md-12">
-           <!--  <h3 class="page-header">Send Message</h3> -->
-            <form class="form-horizontal" action="" method="post" novalidate>
-            <!-- 隠しフォームで次のページに値を送る -->
-          <input type="hidden" name="token" value="<?php echo getToken(); ?>">
-              <div class="form-group">
-                <label for="inputname" class="col-sm-3 control-label">お名前<br><span>(必須)</span></label>
-                <div class="col-sm-9">
-                <div class="text-warning">
-                    <?php if(isset($errorName)): ?>
-                    <?php echo h($errorName); ?>
-                    <?php endif; ?>
-                </div>
-                  <input type="text" class="form-control" name="name" id="inputname" value="<?php echo h($name); ?>" required>
-                  <p class="help-block">(例)山田　太郎</p>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="inputkana" class="col-sm-3 control-label">フリガナ<br><span>(必須)</span></label>
-                <div class="col-sm-9">
-                <div class="text-warning">
-                    <?php if(isset($errorKana)): ?>
-                    <?php echo h($errorKana); ?>
-                    <?php endif; ?>
-                </div>
-                  <input type="text" class="form-control" name="kana" id="inputkana" value="<?php echo h($kana); ?>" required>
-                  <p class="help-block">(例)ヤマダ　タロウ ※全角カタカナ</p>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="inputemail" class="col-sm-3 control-label">メールアドレス<br><span>(必須)</span></label>
-                <div class="col-sm-9">
-                  <div class="text-warning">
-                      <?php if(isset($errorEmail)): ?>
-                        <?php echo h($errorEmail); ?>
-                        <?php endif; ?>
-                    </div>
-                  <input type="email" class="form-control" name="email" id="inputemail" required value="<?php echo h($email); ?>">
-                  <p class="help-block">(例)abc@zz.com ※半角英数字</p>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="inputtel" class="col-sm-3 control-label">電話番号</label>
-                <div class="col-sm-9">
-                  <input type="tel" class="form-control" name="phone" id="inputtel" value="<?php echo h($phone); ?>">
-                  <p class="help-block">(例)03-1234-3214　※ハイフンあり　半角数字</p>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="inputmessage" class="col-sm-3 control-label">お問い合わせ内容<br><span>(必須)</span></label>
-                <div class="col-sm-9">
-                <div class="text-warning">
-                  <?php if(isset($errorInquiry)): ?>
-                    <?php echo h($errorInquiry); ?>
-                    <?php endif; ?>
-                </div>
-                  <textarea rows="10" cols="100" class="form-control" name="inquiry" id="message" required maxlength="999" style="resize:none"><?php echo h($inquiry); ?></textarea>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-offset-3 col-sm-10">
-                  <button type="submit" class="btn btn-success 
-                  " name="check">内容を確認して送信</button>
+            <h2 class="block_body_title">お問い合わせ内容確認</h2>
+            <div class="col-md-8">
+            <p>内容を修正される場合は「修正する」ボタンを、送信される場合は「送信する」ボタンを押してください。</p>
+            <table class="table table-hover table-bordered">
+              <tr>
+                <th>お名前</th>
+                <td><?php echo h($name); ?></td>
+              </tr>
+              <tr>
+                <th>フリガナ</th>
+                <td><?php echo h($kana); ?></td>
+              </tr>
+              <tr>
+                <th>メールアドレス</th>
+                <td><?php echo h($email); ?></td>
+              </tr>
+              <tr>
+                <th>電話番号</th>
+                <td><?php echo h($phone); ?></td>
+              </tr>
+              <tr>
+                <th>お問い合わせ内容</th>
+                <td><?php echo nl2br(h($inquiry)); ?></td>
+              </tr>
+            </table>
+            <form class="form-horizontal" action="" method="POST">
+                <div class="form-group">
+                <div class="col-sm-10">
+                  <button type="submit" name="send" class="btn btn-success btn-lg">送信する</button>
+                  <button type="submit" name="back" class="btn btn-success btn-lg">修正する</button>
                 </div>
               </div>
             </form>
           </div>
-          </div>
-      </section>
-    </div>
   </main>
 
   <p class="page-top"><a href="#"><i class="fa fa-arrow-up fa-lg"></i></a></p>
