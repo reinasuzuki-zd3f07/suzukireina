@@ -1,94 +1,9 @@
-<?php
-session_start();
-require_once 'util.inc.php';
-require_once 'libs/qd/qdsmtp.php';
-require_once 'libs/qd/qdmail.php';
-
-//セッション変数が存在する場合は読み出す
-if(isset($_SESSION["contact"])) {
-    $contact = $_SESSION["contact"];
-
-    $name = $contact["name"];
-    $kana = $contact["kana"];
-    $email = $contact["email"];
-    $phone = $contact["phone"];
-    $inquiry = $contact["inquiry"];
-    $token = $contact["token"];
-
-    if($token !== getToken()){
-        header("Location:contact.php");
-        exit;
-    }
-}
-else{
-    header("Location:contact.php");
-    exit;
-}
-
-if (isset($_POST["send"])){
-//ヒアドキュメントを使用する（php中級のロジックとビュー最後のページを参照）
-$body = <<<EOT
-■氏名
-{$name}
-
-■フリガナ
-{$kana}
-
-■メールアドレス
-{$email}
-
-■電話番号
-{$phone}
-
-■問い合わせ内容
-{$inquiry}
-
-EOT;
-
-    $mail = new Qdmail();
-    // エラーを非表示
-    $mail->errorDisplay(false);
-    $mail->smtpObject()->error_display = false;
-    // 送信内容
-    $mail->from("zd3F07@sim.zdrv.com", "Crescent Shoes Web");
-    $mail->to("zd3F07@sim.zdrv.com","Crescent Shoes 管理者");
-    $mail->subject("Crescent Shoes 問い合わせ");
-    $mail->text($body);
-    // SMTP用設定(xamppのためメールサーバ設定が必要)
-    $param = array(
-        "host" => "w1.sim.zdrv.com",
-        "port" => 25,
-        "from" => "zd3F07@sim.zdrv.com",
-        "protocol" => "SMTP"
-    );
-    $mail->smtp(TRUE);
-    $mail->smtpServer($param);
-    // 送信
-    $flag = $mail->send();
-
-    //もし送信に成功したならば
-    if($flag == TRUE){
-        unset($_SESSION["contact"]);//セッション変数を破棄(送信した後はいらないので消す)
-        header("Location:contact_done.php");
-        exit;
-    }
-    else{//送信失敗した場合は、セッション変数はそのまま残っているはず
-        header("Location:contact_error.php");
-        exit;
-    }
-}
-
-if (isset($_POST["back"])){
-    header("Location: contact.php");
-    exit;
-}
-
-?>
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
-    <title>Contact | REINA SUZUKI</title>
+    <title>HOME | REINA SUZUKI</title>
     <meta name="keywords" content="web,design,coder,html,css,webdesign,">
     <meta name="description" content="鈴木麗那のポートフォリオです。あなたのWebサイトづくりをお手伝いします。">
     <!-- スマホの表示倍率を100%にリセット -->
@@ -170,11 +85,11 @@ if (isset($_POST["back"])){
           </div>
           <div id="navbar" class="navbar-collapse collapse nav-menu">
             <ul class="nav navbar-nav" id="flex">
-              <li class="active"><a href="index.html">Home</a></li>
+              <li class="active"><a href="#">Home</a></li>
               <li><a href="#">Skills</a></li>
               <li><a href="#">Sites</a></li>
-              <li><a href="#">Banner</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="banner.html">Banner</a></li>
+              <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
       </div>
@@ -184,40 +99,14 @@ if (isset($_POST["back"])){
     <div class="container">
       <section class="block">
           <div class="block_body">
-            <h2 class="block_body_title">お問い合わせ内容確認</h2>
-            <div class="col-md-8">
-            <p>内容を修正される場合は「修正する」ボタンを、送信される場合は「送信する」ボタンを押してください。</p>
-            <table class="table table-hover table-bordered">
-              <tr>
-                <th>お名前</th>
-                <td><?php echo h($name); ?></td>
-              </tr>
-              <tr>
-                <th>フリガナ</th>
-                <td><?php echo h($kana); ?></td>
-              </tr>
-              <tr>
-                <th>メールアドレス</th>
-                <td><?php echo h($email); ?></td>
-              </tr>
-              <tr>
-                <th>電話番号</th>
-                <td><?php echo h($phone); ?></td>
-              </tr>
-              <tr>
-                <th>お問い合わせ内容</th>
-                <td><?php echo nl2br(h($inquiry)); ?></td>
-              </tr>
-            </table>
-            <form class="form-horizontal" action="" method="POST">
-                <div class="form-group">
-                <div class="col-sm-10">
-                  <button type="submit" name="send" class="btn btn-success btn-lg">送信する</button>
-                  <button type="submit" name="back" class="btn btn-success btn-lg">修正する</button>
-                </div>
-              </div>
-            </form>
-          </div>
+            <h2 class="block_body_title">ご確認ください</h2>
+            <p class="text-warning caution">大変申し訳ございません。内部エラーが発生しました。</p>
+            <p>お手数ですが、時間をおいて再度お試しいただけますようお願い申し上げます。</p>
+            <p><a href="contact.php">お問い合わせに戻る</a></p>
+            <p><a href="index.html">トップページへ戻る</a></p>
+         </div>
+      </section>
+    </div>
   </main>
 
   <p class="page-top"><a href="#"><i class="fa fa-arrow-up fa-lg"></i></a></p>

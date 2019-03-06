@@ -1,3 +1,101 @@
+<?php
+session_start();
+require_once 'util.inc.php';
+
+//3)変数の初期化（5つの変数を空にする）
+$name    = "";
+$kana    = "";
+$email   = "";
+$phone   = "";
+$inquiry = "";
+$mapNone = TRUE;//地図の非表示フラグ
+
+//2)もしセッション変数内に値が存在（登録）していれば
+// セッション変数から配列を引き出して
+if(isset($_SESSION["contact"])) {
+    $contact = $_SESSION["contact"];
+    $name = $contact["name"];
+    $kana = $contact["kana"];
+    $email = $contact["email"];
+    $phone = $contact["phone"];
+    $inquiry = $contact["inquiry"];
+
+    $mapNone = $contact["mapNone"];
+    // ↑$tokenに関しては確認画面から戻ってもハッシュ値を隠しフォームに表示できないので
+    // 配列から値を引き出す必要はない。
+}
+
+// 1)もし確認ボタンを押したらなら
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $isValidated = TRUE;
+    $mapNone = FALSE;
+    //ここはPOSTで受け取るので↑の$_SESSIONとは違う
+    $name    = $_POST["name"];
+    $kana    = $_POST["kana"];
+    $email   = $_POST["email"];
+    $phone   = $_POST["phone"];
+    $inquiry = $_POST["inquiry"];
+    $token   = $_POST["token"];
+
+    //バリデーション
+    //名前
+    if ($name === "") {
+        $isValidated = FALSE;
+        $errorName = "※お名前を入力してください";
+    }
+
+    //フリガナ
+    if ($kana === "") {
+        $isValidated = FALSE;
+        $errorKana = "※フリガナを入力してください";
+    }
+    elseif (!preg_match("/^[ァ-ヶー]+$/u", $kana)) {
+        $isValidated = FALSE;
+        $errorKana = "※全角カタカナで入力してください";
+    }
+
+    //メアド
+    if ($email === "") {
+        $isValidated = FALSE;
+        $errorEmail = "※メールアドレスを入力してください";
+    }
+    elseif (!preg_match("/^[^@]+@[^@]+\.[^@]+$/", $email)) {
+        $isValidated = FALSE;
+        $errorEmail = "※メールアドレスの形式が正しくありません";
+    }
+
+    //問い合わせ内容
+    if ($inquiry === "") {
+        $isValidated = FALSE;
+        $errorInquiry = "※お問い合わせ内容を入力してください";
+    }
+
+    if ($isValidated == TRUE){
+        //↓これはいらない？
+//         $_SESSION["name"] = $name;
+//         $_SESSION["kana"] = $kana;
+//         $_SESSION["email"] = $email;
+//         $_SESSION["phone"] = $phone;
+//         $_SESSION["inquiry"] = inquiry;
+
+        $contact = array(
+            "name"    => $name,
+            "kana"    => $kana,
+            "email"   => $email,
+            "phone"   => $phone,
+            "inquiry" => $inquiry,
+            "token"   => $token,
+            "mapNone" => FALSE
+        );
+
+        $_SESSION["contact"] = $contact;
+
+        header("Location: contact_conf.php");
+        exit;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
