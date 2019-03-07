@@ -115,9 +115,26 @@ a:hover{
 	background-color: #f9f9f9;
 	color: #cc0000;
 }
-.nav-menu {//ナビの位置
-	display: flex;
-	justify-content: space-between;
+// .navbar-nav ul {//ナビの位置
+// 	display: flex;
+// 	justify-content: space-between;
+// }
+.navbar .navbar-inner {
+padding: 0;
+}
+ 
+.navbar .nav {
+margin: 0;
+display: table;//ここがポイントと思われる
+width: 100%;
+}
+.navbar .nav li {
+	display: table-cell;
+	float: none;
+}
+.navbar .nav li a {
+font-weight: bold;
+text-align: center;
 }
 /*
 //ナビゲーションバーここまで
