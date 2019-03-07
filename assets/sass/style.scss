@@ -215,6 +215,39 @@ a:hover{
 	}
 //ここまでsite.html向けのCSS
 
+//ここからskill.html向けのCSS
+.card-deck{
+	display:flex;
+	justify-content: space-around;
+	margin-bottom: 2rem;
+	@media screen and (max-width: 768px) {
+		display:block;
+		width: 100%;
+	}
+}
+.card{
+	height: 25rem;
+	border: solid 1px #cca3a3;
+}
+.card-title{
+	color:#333;
+	font-weight: 700;
+	font-size: 1.8rem;
+	border-bottom: dotted 1px #cca3a3;
+}
+.card-img-top{
+	margin: 1rem auto;
+	height: 22rem; //イメージの高さを指定することで、タイトルの表示位置変更できる
+	width: 85%;
+}
+
+#dummy{
+	visibility:hidden;
+}
+
+//ここまでskill.html向けのCSS
+
+
 
 /*
 * 共通コンテンツここから
@@ -301,31 +334,6 @@ a:hover{
 		color: #f9f9f9;
 	}
 }
-//site01用のCSS
-.card-deck{
-	display:flex;
-	justify-content: space-around;
-	margin-bottom: 2rem;
-	@media screen and (max-width: 768px) {
-		display:block;
-		width: 100%;
-	}
-}
-.card{
-	height: 25rem;
-}
-.card-title{
-	color:#cc0000;
-	font-weight: 700;
-	font-size: 1.8rem;
-}
-.card-deck img {
-	width: 40%;
-	display: block;
-	margin: 1rem auto;
-}
-.card-text{
-	margin-top: 1.5rem;
-}
+
 
 @import "second";
