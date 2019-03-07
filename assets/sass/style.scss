@@ -141,6 +141,9 @@ a:hover{
 	@media screen and (max-width: 768px) {
 		display:block;
 	}
+	@media screen and (max-width: 1000px){
+		display:block;
+	}
 }
 
 .profile th{
@@ -151,6 +154,10 @@ a:hover{
 .faceImage{//シルエットの画像
 	max-width: 50rem;
 	@media screen and (max-width: 768px) {
+    display: block;
+    width: 100%;
+	}
+	@media screen and (max-width: 1000px) {
     display: block;
     width: 100%;
 	}
@@ -172,6 +179,10 @@ a:hover{
 	@media screen and (max-width: 768px) {
 		display:block;
 		width: 100%;
+	}
+	@media screen and (max-width: 1000px) {
+    display: block;
+    width: 100%;
 	}
 }
 .fa-square{
@@ -202,6 +213,10 @@ a:hover{
 		display:block;
 		width: 100%;
 	}
+	@media screen and (max-width: 1000px) {
+    display: block;
+    width: 100%;
+	}
 }
 .details{
 	width: 100%;
@@ -220,25 +235,44 @@ a:hover{
 	display:flex;
 	justify-content: space-around;
 	margin-bottom: 2rem;
-	@media screen and (max-width: 768px) {
-		display:block;
-		width: 100%;
-	}
+	// @media screen and (max-width: 768px) {
+	// 	display:block;
+	// 	width: 100%;
+	// }
+	// @media screen and (max-width: 980px) {
+ //    display: block;
+ //    width: 70%;
+	// }
 }
 .card{
 	height: 25rem;
 	border: solid 1px #cca3a3;
+	@media screen and (max-width: 768px) {
+	display:block;
+	height: 100%;
+	width: 100%;
+	}
 }
 .card-title{
 	color:#333;
 	font-weight: 700;
 	font-size: 1.8rem;
 	border-bottom: dotted 1px #cca3a3;
+	@media screen and (max-width: 768px) {
+	display:block;
+	height: 100%;
+	width: 100%;
+	}
 }
 .card-img-top{
 	margin: 1rem auto;
 	height: 22rem; //イメージの高さを指定することで、タイトルの表示位置変更できる
 	width: 85%;
+	@media screen and (max-width: 768px) {
+	display:block;
+	height: 100%;
+	width: 100%;
+	}
 }
 
 #dummy{
