@@ -31,12 +31,6 @@ a:hover{
 		color:#cc0000;
 		border-bottom: #cc0000;
 }
-//↓今のところ不要
-//#wrapperの幅
-// #wrapper{
-//   width: 100%;
-//   margin: 0 auto;
-// }
 
 //FontAwsomeの隙間
 .fas{
@@ -115,22 +109,23 @@ a:hover{
 	background-color: #f9f9f9;
 	color: #cc0000;
 }
-// .navbar-nav ul {//ナビの位置
-// 	display: flex;
-// 	justify-content: space-between;
-// }
 .navbar .navbar-inner {
 padding: 0;
 }
- 
 .navbar .nav {
 margin: 0;
 display: table;//ここがポイントと思われる
 width: 100%;
+	@media screen and (max-width: 768px) {
+		display:block;
+	}
 }
 .navbar .nav li {
 	display: table-cell;
 	float: none;
+		@media screen and (max-width: 768px) {
+		display:block;
+	}
 }
 .navbar .nav li a {
 font-weight: bold;
@@ -144,13 +139,6 @@ text-align: center;
 /*
 //プロフィールここから
 */
-// .block_body_p {これは削除。下でクラス名を追加したからもう大丈夫(たぶん)
-// 	display: flex;
-// 	justify-content: space-between;
-// 	@media screen and (max-width: 768px) {
-// 		display:block;
-// 	}
-// }
 
 .profile {
 	display: flex;
@@ -225,7 +213,6 @@ text-align: center;
 //ここまでsite.html向けのCSS
 .site {
 	display: flex;
-	// justify-content: space-between;
 	@media screen and (max-width: 768px) {
 		display:block;
 		width: 100%;
@@ -248,26 +235,23 @@ text-align: center;
 //ここまでsite.html向けのCSS
 
 //ここからskill.html向けのCSS
-.card-deck{
+.cards{//スキルアイコンを囲っているdiv
 	display:flex;
-	justify-content: space-around;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: flex-start;
 	margin-bottom: 2rem;
 	// @media screen and (max-width: 768px) {
 	// 	display:block;
-	// 	width: 100%;
-	// }
-	// @media screen and (max-width: 980px) {
- //    display: block;
- //    width: 70%;
+	// 	width: 100vw;
 	// }
 }
-.card{
-	height: 25rem;
+.card{//アイコン一つずつ
+	margin-right: 2rem;
+	margin-bottom: 3rem;
 	border: solid 1px #cca3a3;
 	@media screen and (max-width: 768px) {
-	display:block;
-	height: 100%;
-	width: 100%;
+	flex: 2 0 30rem;//スマホの時にスキルが横いっぱいになる
 	}
 }
 .card-title{
@@ -275,30 +259,12 @@ text-align: center;
 	font-weight: 700;
 	font-size: 1.8rem;
 	border-bottom: dotted 1px #cca3a3;
-	@media screen and (max-width: 768px) {
-	display:block;
-	height: 100%;
-	width: 100%;
-	}
 }
 .card-img-top{
-	margin: 1rem auto;
-	height: 22rem; //イメージの高さを指定することで、タイトルの表示位置変更できる
-	width: 85%;
-	@media screen and (max-width: 768px) {
-	display:block;
-	height: 100%;
-	width: 100%;
-	}
+	padding: 1rem .5rem;
+	margin: 0;
 }
-
-#dummy{
-	visibility:hidden;
-}
-
 //ここまでskill.html向けのCSS
-
-
 
 /*
 * 共通コンテンツここから
