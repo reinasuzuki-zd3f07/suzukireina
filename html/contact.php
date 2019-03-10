@@ -148,8 +148,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <li><img src="images/rei01.png" alt="rei"></li>
     <li><img src="images/rei02.png" alt="rei"></li>
     <li><img src="images/rei03.png" alt="rei"></li>
-    <li><img src="images/rei04.png" alt="rei"></li>
-    <li><img src="images/rei05.png" alt="rei"></li>
+    <li><img src="images/rei17.png" alt="rei"></li>
+    <li><img src="images/rei24.png" alt="rei"></li>
     <li><img src="images/rei06.png" alt="rei"></li>
     <li><img src="images/rei07.png" alt="rei"></li>
     </ul>
@@ -161,7 +161,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <li><img src="images/rei08.png" alt="rei"></li>
     <li><img src="images/rei09.png" alt="rei"></li>
     <li><img src="images/rei10.png" alt="rei"></li>
-    <li><img src="images/rei11.png" alt="rei"></li>
+    <li><img src="images/rei21.png" alt="rei"></li>
     <li><img src="images/rei12.png" alt="rei"></li>
     <li><img src="images/rei13.png" alt="rei"></li>
     <li><img src="images/rei14.png" alt="rei"></li>
@@ -259,7 +259,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
               </div>
               <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-10">
-                  <button type="submit" class="btn btn-success 
+                  <button type="submit" class="btn btn-success
                   " name="check">内容を確認して送信</button>
                 </div>
               </div>

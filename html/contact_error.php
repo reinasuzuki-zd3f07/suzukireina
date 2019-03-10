@@ -4,20 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>HOME | REINA SUZUKI</title>
-    <meta name="keywords" content="web,design,coder,html,css,webdesign,">
+    <meta name="keywords" content="web,design,coder,html,css,webdesign">
     <meta name="description" content="鈴木麗那のポートフォリオです。あなたのWebサイトづくりをお手伝いします。">
     <!-- スマホの表示倍率を100%にリセット -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- iPhoneXでのボックス表示対応(Bootstrapのハンバーガーアイコンが無効になる) -->
     <!-- <meta name="viewport" content="viewport-fit=cover"> -->
     <!-- OGP (Facebookでのフィード表示) -->
-    <meta property="fb:app_id" content="App-ID(15文字の半角数字)" />
+<!--     <meta property="fb:app_id" content="App-ID(15文字の半角数字)" />
     <meta property="og:title" content="(PageTitle | )SiteTitle" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://sample.com/aboutus" />
     <meta property="og:image" content="http://test.com/img/ogp.jpg" />
     <meta property="og:site_name" content="SiteTitle" />
-    <meta property="og:description" content="ページ説明文" />
+    <meta property="og:description" content="ページ説明文" /> -->
 
     <!-- ファビコン -->
     <link rel="icon" href="images/fa.png" type="image/png">
@@ -50,8 +50,8 @@
     <li><img src="images/rei01.png" alt="rei"></li>
     <li><img src="images/rei02.png" alt="rei"></li>
     <li><img src="images/rei03.png" alt="rei"></li>
-    <li><img src="images/rei04.png" alt="rei"></li>
-    <li><img src="images/rei05.png" alt="rei"></li>
+    <li><img src="images/rei17.png" alt="rei"></li>
+    <li><img src="images/rei21.png" alt="rei"></li>
     <li><img src="images/rei06.png" alt="rei"></li>
     <li><img src="images/rei07.png" alt="rei"></li>
     </ul>
@@ -63,7 +63,7 @@
     <li><img src="images/rei08.png" alt="rei"></li>
     <li><img src="images/rei09.png" alt="rei"></li>
     <li><img src="images/rei10.png" alt="rei"></li>
-    <li><img src="images/rei11.png" alt="rei"></li>
+    <li><img src="images/rei21.png" alt="rei"></li>
     <li><img src="images/rei12.png" alt="rei"></li>
     <li><img src="images/rei13.png" alt="rei"></li>
     <li><img src="images/rei14.png" alt="rei"></li>
@@ -127,6 +127,7 @@
     gtag('require', 'linkid');
     gtag('config', 'UA-96344339-1');
   </script>
+  <!-- 各jsの読み込み-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

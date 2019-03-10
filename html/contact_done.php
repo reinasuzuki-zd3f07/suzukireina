@@ -49,8 +49,8 @@
     <li><img src="images/rei01.png" alt="rei"></li>
     <li><img src="images/rei02.png" alt="rei"></li>
     <li><img src="images/rei03.png" alt="rei"></li>
-    <li><img src="images/rei04.png" alt="rei"></li>
-    <li><img src="images/rei05.png" alt="rei"></li>
+    <li><img src="images/rei17.png" alt="rei"></li>
+    <li><img src="images/rei24.png" alt="rei"></li>
     <li><img src="images/rei06.png" alt="rei"></li>
     <li><img src="images/rei07.png" alt="rei"></li>
     </ul>
@@ -62,7 +62,7 @@
     <li><img src="images/rei08.png" alt="rei"></li>
     <li><img src="images/rei09.png" alt="rei"></li>
     <li><img src="images/rei10.png" alt="rei"></li>
-    <li><img src="images/rei11.png" alt="rei"></li>
+    <li><img src="images/rei21.png" alt="rei"></li>
     <li><img src="images/rei12.png" alt="rei"></li>
     <li><img src="images/rei13.png" alt="rei"></li>
     <li><img src="images/rei14.png" alt="rei"></li>
