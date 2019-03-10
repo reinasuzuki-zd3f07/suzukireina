@@ -10,15 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- iPhoneXでのボックス表示対応(Bootstrapのハンバーガーアイコンが無効になる) -->
     <!-- <meta name="viewport" content="viewport-fit=cover"> -->
-    <!-- OGP (Facebookでのフィード表示) -->
-<!--     <meta property="fb:app_id" content="App-ID(15文字の半角数字)" />
-    <meta property="og:title" content="(PageTitle | )SiteTitle" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://sample.com/aboutus" />
-    <meta property="og:image" content="http://test.com/img/ogp.jpg" />
-    <meta property="og:site_name" content="SiteTitle" />
-    <meta property="og:description" content="ページ説明文" /> -->
-
     <!-- ファビコン -->
     <link rel="icon" href="images/fa.png" type="image/png">
     <!-- ホーム画面に追加 -->
@@ -34,8 +25,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <!-- Bootstrap3.3.7 Javascript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- OriginalJS -->
-    <!-- <script src="js/index.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135962152-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-135962152-1');
+</script>
 
     <!-- IE9以下にHTML5の新要素を認識 -->
     <!--[if lt IE 9]>
@@ -118,15 +116,6 @@
   </footer>
 </div>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-96344339-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('require', 'linkid');
-    gtag('config', 'UA-96344339-1');
-  </script>
   <!-- 各jsの読み込み-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
