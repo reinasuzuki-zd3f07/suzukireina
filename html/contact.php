@@ -205,7 +205,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <section class="block">
           <div class="block_body">
             <h2 class="block_body_title">お問い合わせ</h2>
-            <div class="col-md-12">
+            <div class="col-md-12 contact">
            <!--  <h3 class="page-header">Send Message</h3> -->
             <form class="form-horizontal" action="" method="post" novalidate>
             <!-- 隠しフォームで次のページに値を送る -->

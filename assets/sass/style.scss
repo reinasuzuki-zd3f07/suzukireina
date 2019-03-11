@@ -39,12 +39,12 @@ a:hover{
 .far{
   padding-right: 0.8rem;
 }
-
 .gl-header_title{//の文字隠し
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
   }
+
 /*
 * ハンバーガーアイコン
 */
@@ -198,9 +198,15 @@ text-align: center;
 //ここまでbanner.html向けのCSS
 
 //ここからcontact.html向けのCSS
+.contact {
+	margin-bottom: 6rem;
+}
 .btn-success {
+	width:20rem;
 	background-color: #cc0000;
+	opacity: 0.5;
 	border-color:#cc0000;
+	margin-top: 2rem;
 }
 .btn-success:hover{
 		background-color: #990000;
@@ -326,6 +332,7 @@ text-align: center;
 	width: 5rem;
 	height: 5rem;
 	text-align:center;
+	padding-left: 1rem;
 	padding-top: 1rem;
   @media screen and (max-width: 768px) {
     bottom: 50px;
