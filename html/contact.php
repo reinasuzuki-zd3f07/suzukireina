@@ -109,13 +109,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <!-- iPhoneXでのボックス表示対応(Bootstrapのハンバーガーアイコンが無効になる) -->
     <!-- <meta name="viewport" content="viewport-fit=cover"> -->
     <!-- OGP (Facebookでのフィード表示) -->
-    <meta property="fb:app_id" content="App-ID(15文字の半角数字)" />
-    <meta property="og:title" content="(PageTitle | )SiteTitle" />
+    <!-- <meta property="fb:app_id" content="App-ID(15文字の半角数字)" /> -->
+    <meta property="og:title" content="Contact | REINA SUZUKI" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://sample.com/aboutus" />
-    <meta property="og:image" content="http://test.com/img/ogp.jpg" />
-    <meta property="og:site_name" content="SiteTitle" />
-    <meta property="og:description" content="ページ説明文" />
+    <meta property="og:url" content="http://project.zd3f07.sim.zdrv.com/8980742b1e9aff12e32a645bf7b80f5d/html/contact.php" />
+    <meta property="og:image" content="http://project.zd3f07.sim.zdrv.com/8980742b1e9aff12e32a645bf7b80f5d/html/images/ogimage02.png" />
+    <meta property="og:site_name" content="REINA SUZUKI" />
+    <meta property="og:description" content="鈴木麗那のポートフォリオです。お問い合わせページです。" />
 
     <!-- ファビコン -->
     <link rel="icon" href="images/fa.png" type="image/png">
