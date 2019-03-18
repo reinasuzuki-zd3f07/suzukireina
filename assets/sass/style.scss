@@ -57,6 +57,14 @@ a:hover{
 		}
 	}
 }
+//PDFファイルには自動でアイコンを付ける
+a[href$=".pdf"]:after {
+    content:" ";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url(../images/PDF_24.png) no-repeat;
+}
 /*
 * 全体設定ここまで
 */
